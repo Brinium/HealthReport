@@ -6,6 +6,7 @@ Save them in \Scripts folder like "/src/Scripts/Func_TestReportScript.ps1"
 
 For each report script add them to the following function in "/src/App_HealthCheckReport.ps1"
 
+```
 function Get-ReportScriptList()
 {
     $scripts = New-Object "System.Collections.Generic.List``1[Tenix.HealthCheck.ReportScript]";
@@ -14,3 +15,4 @@ function Get-ReportScriptList()
 
     return $scripts;
 }
+```
