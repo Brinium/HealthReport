@@ -1,6 +1,6 @@
 ﻿if (-not ("ReportScript" -as [type])) {
 Add-Type -Language CSharp @"
-namespace Tenix.HealthCheck
+namespace HealthCheck
 {
     public enum Status 
     {

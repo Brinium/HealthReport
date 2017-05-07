@@ -8,11 +8,11 @@ $emailSubject = "Health Report"
 
 $htmlFilePath = "$PSScriptRoot\report.html";
 
-function Get-ReportScriptList()
+function Get-ScriptToRun()
 {
-    $scripts = New-Object "System.Collections.Generic.List``1[Tenix.HealthCheck.ReportScript]";
+    $scripts = New-Object "System.Collections.Generic.List``1[HealthCheck.ReportScript]";
 
-    $scripts.Add((New-Object Tenix.HealthCheck.ReportScript("Test1", "Test", "C:\temp\HealthReport\Scripts\Func_TestReportScript.ps1", $false)));
+    $scripts.Add((New-Object HealthCheck.ReportScript("Test1", "Test", "$PSScriptRoot\Scripts\Func_TestReportScript.ps1", $false)));
 
     return $scripts;
 }
@@ -22,9 +22,9 @@ function Run-Script()
     PARAM
     (
 		[Parameter(Mandatory=$true)]
-        [Tenix.HealthCheck.ReportScript]$script,
+        [HealthCheck.ReportScript]$script,
 		[Parameter(Mandatory=$true)]
-        [System.Collections.Generic.List``1[Tenix.HealthCheck.ReportItem]]$reports
+        [System.Collections.Generic.List``1[HealthCheck.ReportItem]]$reports
     )
     
     &"$($script.Location)"  "$($script.Id)" $reports
@@ -35,20 +35,20 @@ function Display-Report
     PARAM
     (
 		[Parameter(Mandatory=$true)]
-        [System.Collections.Generic.List``1[Tenix.HealthCheck.ReportItem]]$reports
+        [System.Collections.Generic.List``1[HealthCheck.ReportItem]]$reports
     )
 
     $saveHtmlFileScript = "$PSScriptRoot\Func_SaveHtmlReportFile.ps1";
     &"$saveHtmlFileScript" $reports $htmlFilePath;    
 
     $emailScript = "$PSScriptRoot\Func_SendHtmlReportEmail.ps1";
-    &"$emailScript" $reports $emailSubject $emailTo $emailFrom $emailServer;    
+    #&"$emailScript" $reports $emailSubject $emailTo $emailFrom $emailServer;    
 }
 
-$reports = New-Object "System.Collections.Generic.List``1[Tenix.HealthCheck.ReportItem]";
-$reports.Add((New-Object Tenix.HealthCheck.ReportItem -Property @{ DisplayName="Health Check Report"; DateRan = [System.DateTime]::Now }))
+$reports = New-Object "System.Collections.Generic.List``1[HealthCheck.ReportItem]";
+$reports.Add((New-Object HealthCheck.ReportItem -Property @{ DisplayName="Health Check Report"; DateRan = [System.DateTime]::Now }))
 
-$scripts = Get-ReportScriptList;
+$scripts = Get-ScriptToRun;
 
 foreach($script in $scripts)# | where $_.CanRunConcurrent -eq $false))
 {

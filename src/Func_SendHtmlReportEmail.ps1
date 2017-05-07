@@ -1,6 +1,6 @@
 ﻿param (
 	[Parameter(Mandatory=$true,Position=0)]
-    [System.Collections.Generic.List``1[Tenix.HealthCheck.ReportItem]]$reports,
+    [System.Collections.Generic.List``1[HealthCheck.ReportItem]]$reports,
     [Parameter(Mandatory=$true,
                Position = 1,
                HelpMessage="Email subject")]

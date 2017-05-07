@@ -143,7 +143,7 @@ function Get-ReportHtml
 {
     param (
 	    [Parameter(Mandatory=$true,Position=1)]
-        [System.Collections.Generic.List``1[Tenix.HealthCheck.ReportItem]]$reports
+        [System.Collections.Generic.List``1[HealthCheck.ReportItem]]$reports
      )
 
     $reportHtml = @"
