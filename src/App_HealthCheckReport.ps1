@@ -27,6 +27,7 @@ function Run-Script()
         [System.Collections.Generic.List``1[HealthCheck.ReportItem]]$reports
     )
     
+    Write-Host "Run Script `"$($script.DisplayName)`""
     &"$($script.Location)"  "$($script.Id)" $reports
 }
 
@@ -38,9 +39,11 @@ function Display-Report
         [System.Collections.Generic.List``1[HealthCheck.ReportItem]]$reports
     )
 
+    Write-Host "Save Html File $htmlFilePath"
     $saveHtmlFileScript = "$PSScriptRoot\Func_SaveHtmlReportFile.ps1";
     &"$saveHtmlFileScript" $reports $htmlFilePath;    
 
+    Write-Host "Send email"
     $emailScript = "$PSScriptRoot\Func_SendHtmlReportEmail.ps1";
     #&"$emailScript" $reports $emailSubject $emailTo $emailFrom $emailServer;    
 }
