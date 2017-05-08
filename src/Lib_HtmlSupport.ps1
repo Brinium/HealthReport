@@ -53,7 +53,7 @@ function Get-HtmlIe8Css
                     padding: 0;
                 }
 
-                table tr.group-content, table tr.content-log {
+                table tr.content-log {
                     background: #fafafa;
                 }
 
@@ -100,29 +100,14 @@ function Get-HtmlIe8Css
             }
 
             .Success {
-                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)"; /* IE 8 */
-                filter: alpha(opacity=85); /* IE 5-7 */
-                -moz-opacity: 0.85; /* Netscape */
-                -khtml-opacity: 0.85; /* Safari 1.x */
-                opacity: 0.85; /* Good browsers */
                 background: #5DE61C;
             }
 
             .Warning {
-                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)"; /* IE 8 */
-                filter: alpha(opacity=95); /* IE 5-7 */
-                -moz-opacity: 0.95; /* Netscape */
-                -khtml-opacity: 0.95; /* Safari 1.x */
-                opacity: 0.95; /* Good browsers */
                 background: #E6A51C;
             }
 
             .Error {
-                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)"; /* IE 8 */
-                filter: alpha(opacity=85); /* IE 5-7 */
-                -moz-opacity: 0.85; /* Netscape */
-                -khtml-opacity: 0.85; /* Safari 1.x */
-                opacity: 0.85; /* Good browsers */
                 background: #E6401C;
             }
 
@@ -175,7 +160,7 @@ function Get-HtmlIe5Css
                     padding: 0;
                 }
 
-                table tr.group-content, table tr.content-log {
+                table tr.content-log {
                     background: #fafafa;
                 }
 
@@ -222,29 +207,14 @@ function Get-HtmlIe5Css
             }
 
             .Success {
-                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)"; /* IE 8 */
-                filter: alpha(opacity=85); /* IE 5-7 */
-                -moz-opacity: 0.85; /* Netscape */
-                -khtml-opacity: 0.85; /* Safari 1.x */
-                opacity: 0.85; /* Good browsers */
                 background: #5DE61C;
             }
 
             .Warning {
-                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)"; /* IE 8 */
-                filter: alpha(opacity=95); /* IE 5-7 */
-                -moz-opacity: 0.95; /* Netscape */
-                -khtml-opacity: 0.95; /* Safari 1.x */
-                opacity: 0.95; /* Good browsers */
                 background: #E6A51C;
             }
 
             .Error {
-                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)"; /* IE 8 */
-                filter: alpha(opacity=85); /* IE 5-7 */
-                -moz-opacity: 0.85; /* Netscape */
-                -khtml-opacity: 0.85; /* Safari 1.x */
-                opacity: 0.85; /* Good browsers */
                 background: #E6401C;
             }
 
