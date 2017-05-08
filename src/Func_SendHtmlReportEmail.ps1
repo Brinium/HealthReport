@@ -1,4 +1,4 @@
-﻿param (
+param (
 	[Parameter(Mandatory=$true,Position=0)]
     [System.Collections.Generic.List``1[HealthCheck.ReportItem]]$reports,
     [Parameter(Mandatory=$true,
@@ -23,15 +23,15 @@
  ."$PSScriptRoot\Lib_HtmlSupport.ps1"
   
 # Assemble the HTML Header and CSS for our Report
-$htmlHeader = Get-HtmlHeader;
+$htmlHeader = Get-HtmlIe5Header-WithCss;
 
 $htmlReport = Get-ReportHtml $reports;
     
 $htmlFooter = Get-HtmlFooter;
 
 $htmlMessage = $htmlHeader + $htmlReport + $htmlFooter
-# Save the report out to a file in the current path
 
+# Send Email
 $args = @{
     To         =$to
     Body       =$htmlMessage
