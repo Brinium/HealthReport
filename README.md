@@ -12,6 +12,7 @@ function Get-ReportScriptList()
     $scripts = New-Object "System.Collections.Generic.List``1[Tenix.HealthCheck.ReportScript]";
 
     $scripts.Add((New-Object Tenix.HealthCheck.ReportScript("Test1", "Test", "$PSScriptRoot\Scripts\Func_TestReportScript.ps1", $false)));
+    $scripts.Add((New-Object Tenix.HealthCheck.ReportScript(...,...,"$PSScriptRoot\Scripts\....ps1")));
 
     return $scripts;
 }
