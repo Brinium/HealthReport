@@ -17,3 +17,5 @@ function Get-ReportScriptList()
     return $scripts;
 }
 ```
+
+Note: Curently the email report html displays badly in Outlook. I still need to write IE5 compatable CSS so that this displays correctly.
